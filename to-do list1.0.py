@@ -2,6 +2,13 @@
 STRIKETHROUGH = "\033[9m"
 RESET= "\033[0m"
 
+def create():
+    try: 
+        pass
+    except FileNotFoundError:
+        with open("to-dolist.txt","w") as f:
+            pass
+
 def add():
     task_add = input("Add a task: ")
     with open("to-dolist.txt","a") as f:
@@ -75,14 +82,14 @@ def finished(x):
     except:
         print("Oops!!")
 
-with open("to-dolist.txt","r") as f:
-    lines = f.readlines()
-    line_count = 0
-    for line in lines:
-        line_count += 1 
-    pass
 
-
+with open("to-dolist.txt","w") as fw:
+    with open("to-dolist.txt","r") as f:
+        lines = f.readlines()
+        line_count = 0
+        for line in lines:
+            line_count += 1 
+        
 
 while True:
     task = input("Type add to add a task, read to view your to-do list, or q to quit: ")
