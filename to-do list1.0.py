@@ -83,7 +83,7 @@ def finished(x):
         print("Oops!!")
 
 
-with open("to-dolist.txt","x") as fw:
+with open("to-dolist.txt","w") as fw:
     with open("to-dolist.txt","r") as f:
         lines = f.readlines()
         line_count = 0
